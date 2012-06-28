@@ -35,7 +35,7 @@ module Instagram
           request.body = options unless options.empty?
         end
       end
-      raw ? response : response.body
+      raw ? response : response.body.merge(:headers => response.headers)
     end
 
     def formatted_path(path)
